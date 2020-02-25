@@ -5,30 +5,35 @@ class SelectionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('images/bg.png'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        constraints: BoxConstraints.expand(),
-        child: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 35.0, horizontal: 0.0),
-                  child: Text(
-                    'Quiz Game',
-                    style: TextStyle(
-                      fontSize: 45.0,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
-                    ),
+      body: NestedScrollView(
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            SliverAppBar(
+              expandedHeight: 200.0,
+              floating: true,
+              pinned: true,
+              backgroundColor: Color(0xFFc23c3c),
+              flexibleSpace: FlexibleSpaceBar(
+                centerTitle: true,
+                title: Text(
+                  "Quiz Game",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 25.0,
                   ),
                 ),
+                background: Image.asset(
+                  'images/toolbar_bg.png',
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+          ];
+        },
+        body: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              children: <Widget>[
                 CustomCard('Math', 'calculator', Colors.amber),
                 CustomCard('Art', 'movie', Colors.lightBlue),
                 CustomCard('Sport', 'sports', Colors.lightGreen),

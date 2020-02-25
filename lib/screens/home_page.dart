@@ -204,7 +204,9 @@ class _HomePageState extends State<HomePage> {
         child: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
+              // header
               Padding(
                 padding: const EdgeInsets.symmetric(
                     vertical: 20.0, horizontal: 10.0),
@@ -237,6 +239,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
+              // quiz body
               Expanded(
                 child: SingleChildScrollView(
                   child: Padding(
@@ -330,6 +333,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+              // score board
               Container(
                   constraints: BoxConstraints.tightFor(
                     height: 60.0,

@@ -12,7 +12,7 @@ class QuestionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 25.0, left: 20.0, right: 20.0),
+      padding: const EdgeInsets.only(top: 25.0, left: 20.0, right: 20.0, bottom: 25.0),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5.0),
